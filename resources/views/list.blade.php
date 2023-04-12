@@ -81,18 +81,36 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    自動販売機ツール
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>会社ID</th>
+                                <th>商品名</th>
+                                <th>価格</th>
+                                <th>在庫</th>
+                                <th>コメント</th>
+                                <th>画像</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($products as $product)
+                            <tr>
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->company_id }}</td>
+                                <td>{{ $product->product_name }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->stock }}</td>
+                                <td>{{ $product->comment }}</td>
+                                <td>{{ $product->img_path }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

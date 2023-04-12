@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/list', [App\Http\Controllers\ProductsController::class, 'showList'])->name('list');
+Route::get('/regist',[App\Http\Controllers\ProductsController::class, 'showRegistForm'])->name('regist');
+Route::post('/regist',[App\Http\Controllers\ProductsController::class, 'registSubmit'])->name('submit');
